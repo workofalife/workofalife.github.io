@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.titulo{
+  font-family:'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  margin: 10px auto;
+  color: #00ff22;
+}
+
+html{
+  font-family: 'Urbanist', sans-serif;
+  font-size: 10px;
+  box-sizing: border-box;
+  background-color: #3c4053;
+}
+
+section{
+  width: 100%;
+  height: 100vh;
+  background-color: #3c4053;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.acordeon-item{
+  background-color: #283042;
+  border-radius: .4rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: .5rem 2px .5rem rgba(0,0,0,.1);
+}
+
+.acordeon-link{
+  font-size: 1.6rem;
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  background-color: #283042;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.acordeon-link i{
+  color: #e7d5ff;
+  padding: .5rem;
+}
+
+.acordeon-link .ion-md-remove{
+  display: none;
+}
+
+.respuesta{
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #212838;
+  transition: max-height 650ms;
+}
+
+.respuesta::before{
+  content: "";
+  position: absolute;
+  width: .6rem;
+  height: 90%;
+  background-color: #8fc460;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.respuesta p{
+  color: rgba(255, 255, 255, .6);
+  font-size: 1.6rem;
+  padding: 2rem;
+}
+
+.acordeon-item:target .respuesta{
+  max-height: 36rem;
+}
+
+.acordeon-item:target .acordeon-link .ion-md-add{
+  display: none;
+} 
+
+.acordeon-item:target .acordeon-link .ion-md-remove{
+  display: block;
+}
